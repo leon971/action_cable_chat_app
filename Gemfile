@@ -10,10 +10,12 @@ gem 'coffee-rails',            '4.2.1'
 gem 'jquery-rails',            '4.1.1'
 gem 'turbolinks',              '5.0.0'
 gem 'jbuilder',                '2.4.1'
+gem 'redis',                   '~> 3.3.3'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.0', platform: :mri
+  gem 'mysql2'
 end
 
 group :development do
