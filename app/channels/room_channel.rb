@@ -8,4 +8,15 @@ class RoomChannel < ApplicationCable::Channel
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
   end
+
+  def user_is_typing(username)
+    ActionCable.server.broadcast "room_channel",
+                                     typing_user: "#{message_user.username} is typing ..."
+  end
+
+  def user_is_deleting
+    ActionCable.server.broadcast "room_channel",
+                                     typing_user: 'deleting'
+  end
+
 end
